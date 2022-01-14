@@ -17,9 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Prepare repository
-        run: git fetch --unshallow --tags
-
       - name: 🏗 setup-node
         uses: actions/setup-node@v2
         with:
