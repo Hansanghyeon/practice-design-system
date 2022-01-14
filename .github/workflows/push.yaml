@@ -26,8 +26,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
         run: |
           yarn set version berry
-          yarn install --frozen-lockfile
+          yarn install
           yarn build
           yarn release
