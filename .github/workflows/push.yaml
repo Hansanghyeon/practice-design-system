@@ -16,16 +16,19 @@ jobs:
     # The list of steps that the action will go through
     steps:
       - uses: actions/checkout@v2
+
       - name: Prepare repository
         run: git fetch --unshallow --tags
-      - name: Use Node.js 16.x
+
+      - name: 🏗 setup-node
         uses: actions/setup-node@v2
         with:
           node-version: "16.x"
+
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          #👇 npm token, see https://storybook.js.org/tutorials/design-systems-for-developers/react/en/distribute/ to obtain it
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
+          yarn set version berry
           yarn install
