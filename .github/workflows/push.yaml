@@ -30,4 +30,3 @@ jobs:
         run: |
           yarn set version berry
           yarn install
-          yarn build
