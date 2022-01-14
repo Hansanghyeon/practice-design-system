@@ -31,4 +31,3 @@ jobs:
           yarn set version berry
           yarn install
           yarn build
-          yarn release
