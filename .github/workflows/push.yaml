@@ -22,17 +22,12 @@ jobs:
         with:
           node-version: "16.x"
 
-      - name: yarn set
-        run: yarn set version berry
-      - name: yarn install
-        run: |
-          yarn cache clean --all
-          yarn install
-
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
+          yarn set version berry
+          yarn install --frozen-lockfile
           yarn build
           yarn release
