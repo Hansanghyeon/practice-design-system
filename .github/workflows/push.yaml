@@ -25,7 +25,9 @@ jobs:
       - name: yarn set
         run: yarn set version berry
       - name: yarn install
-        run: yarn install
+        run: |
+          yarn cache clean --all
+          yarn install
 
       - name: Create Release
         env:
