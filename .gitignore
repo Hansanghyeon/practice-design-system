@@ -1,1 +1,6 @@
 node_modules
+.npmrc
+.env
+*.log
+build
+.DS_Store

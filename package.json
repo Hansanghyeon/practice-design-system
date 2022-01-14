@@ -1,5 +1,10 @@
 {
+  "name": "@hansanghyeon/practice-sb",
+  "version": "0.0.0",
+  "description": "",
   "main": "./build/index.js",
+  "author": "Hansanghyeon",
+  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -25,5 +30,12 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook",
     "build": "rollup -c"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hansanghyeon/practice-storybook-designSystem.git"
   }
 }
